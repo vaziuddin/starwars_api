@@ -1,0 +1,87 @@
+$small-width: 480px;
+$medium-width: 768px;
+$large-width: 1024px;
+
+
+.text_styles {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    color: yellow;
+  }
+
+
+  .App{
+    color:yellow ;
+    background-image: url(../public/stars.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    border-style: groove;
+    color: white;
+    text-align: justify;
+  }
+  
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  font-family: arial;
+  border: 2px solid white;
+  margin: 4px;
+}
+
+
+
+@mixin extra-small {
+  @media (max-width: #{$small-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-only {
+  @media (min-width: #{$small-width}) and (max-width: #{$medium-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-up {
+  @media (min-width: #{$small-width}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}
